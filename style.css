@@ -85,9 +85,8 @@ body {
 }
 
 .container {
-  min-width: 70%;
-  height: fit-content;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -98,13 +97,10 @@ body {
   border-radius: 30px;
 }
 .result {
-  width: 50%;
-  height: 50%;
   background: hsl(234, 85%, 45%, 0.9);
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 1rem;
   justify-content: space-between;
   padding-block: 1rem;
   border-radius: 20px;
@@ -162,8 +158,7 @@ body {
 }
 
 .summary {
-  padding: 2rem 2rem 0;
-  width: 50%;
+  padding: 2rem 2rem 1rem;
 }
 .summary__item {
   display: flex;
@@ -214,4 +209,16 @@ body {
   font-size: 1rem;
   margin-top: 0.5rem;
   cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    min-width: 70%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
 }
